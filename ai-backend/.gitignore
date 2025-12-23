@@ -1,0 +1,15 @@
+# Virtual environments
+asaan-env/
+venv/
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Pip temp folders
+pip-*
+
+# OS / Editor junk
+.vscode/
+.DS_Store
