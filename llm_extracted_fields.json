@@ -1,0 +1,275 @@
+{
+  "form_fields": [
+    {
+      "field_name": "Category",
+      "field_key": "category",
+      "field_type": "dropdown",
+      "required": true,
+      "validation": null,
+      "coordinates": null,
+      "span": null,
+      "page_number": 1
+    },
+    {
+      "field_name": "Registration No.",
+      "field_key": "registration_number",
+      "field_type": "text_input",
+      "required": true,
+      "validation": "numeric",
+      "coordinates": null,
+      "span": null,
+      "page_number": 1
+    },
+    {
+      "field_name": "Name of Candidate",
+      "field_key": "candidate_name",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": null,
+      "span": null,
+      "page_number": 1
+    },
+    {
+      "field_name": "C.N.I.C. No.",
+      "field_key": "cnic_number",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": null,
+      "span": null,
+      "page_number": 1
+    },
+    {
+      "field_name": "Father's Name",
+      "field_key": "father_name",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": null,
+      "span": null,
+      "page_number": 1
+    },
+    {
+      "field_name": "Father's C.N.I.C. No.",
+      "field_key": "father_cnic_number",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": null,
+      "span": null,
+      "page_number": 1
+    },
+    {
+      "field_name": "Present Address",
+      "field_key": "present_address",
+      "field_type": "textarea",
+      "required": true,
+      "validation": null,
+      "coordinates": null,
+      "span": null,
+      "page_number": 1
+    },
+    {
+      "field_name": "Permanent District",
+      "field_key": "permanent_district",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": null,
+      "span": null,
+      "page_number": 1
+    },
+    {
+      "field_name": "Nationality",
+      "field_key": "nationality",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": null,
+      "span": null,
+      "page_number": 1
+    },
+    {
+      "field_name": "Religion",
+      "field_key": "religion",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": null,
+      "span": null,
+      "page_number": 1
+    },
+    {
+      "field_name": "Date of Birth",
+      "field_key": "date_of_birth",
+      "field_type": "date",
+      "required": true,
+      "validation": null,
+      "coordinates": null,
+      "span": null,
+      "page_number": 1
+    },
+    {
+      "field_name": "Name of Centre (City)",
+      "field_key": "centre_city",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": null,
+      "span": null,
+      "page_number": 1
+    },
+    {
+      "field_name": "Bank Challan No.",
+      "field_key": "bank_challan_number",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": null,
+      "span": null,
+      "page_number": 1
+    },
+    {
+      "field_name": "Date",
+      "field_key": "date",
+      "field_type": "date",
+      "required": true,
+      "validation": null,
+      "coordinates": null,
+      "span": null,
+      "page_number": 1
+    },
+    {
+      "field_name": "Branch Name",
+      "field_key": "branch_name",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": null,
+      "span": null,
+      "page_number": 1
+    },
+    {
+      "field_name": "Previous Examination Information",
+      "field_key": "previous_examination_info",
+      "field_type": "textarea",
+      "required": true,
+      "validation": null,
+      "coordinates": null,
+      "span": null,
+      "page_number": 1
+    },
+    {
+      "field_name": "Name of the recognised Institution",
+      "field_key": "recognised_institution",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": null,
+      "span": null,
+      "page_number": 1
+    },
+    {
+      "field_name": "Date of appointment",
+      "field_key": "date_of_appointment",
+      "field_type": "date",
+      "required": true,
+      "validation": null,
+      "coordinates": null,
+      "span": null,
+      "page_number": 1
+    },
+    {
+      "field_name": "Period of Service",
+      "field_key": "period_of_service",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": null,
+      "span": null,
+      "page_number": 1
+    },
+    {
+      "field_name": "School Registration No.",
+      "field_key": "school_registration_number",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": null,
+      "span": null,
+      "page_number": 1
+    },
+    {
+      "field_name": "Signature of the Candidate",
+      "field_key": "candidate_signature",
+      "field_type": "signature",
+      "required": true,
+      "validation": null,
+      "coordinates": null,
+      "span": null,
+      "page_number": 1
+    },
+    {
+      "field_name": "Contact Number",
+      "field_key": "contact_number",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": null,
+      "span": null,
+      "page_number": 1
+    },
+    {
+      "field_name": "Signature of the Head of the Institution",
+      "field_key": "head_signature",
+      "field_type": "signature",
+      "required": true,
+      "validation": null,
+      "coordinates": null,
+      "span": null,
+      "page_number": 1
+    },
+    {
+      "field_name": "Counter Signature of the District Education Officer",
+      "field_key": "counter_signature",
+      "field_type": "signature",
+      "required": true,
+      "validation": null,
+      "coordinates": null,
+      "span": null,
+      "page_number": 1
+    },
+    {
+      "field_name": "Elective Subjects",
+      "field_key": "elective_subjects",
+      "field_type": "checkbox",
+      "required": true,
+      "validation": "multiple_choice",
+      "coordinates": null,
+      "span": null,
+      "page_number": null
+    }
+  ],
+  "instructions": [
+    "all the relevant information, provided in this form and attach all the required documents. Incomplete form will be rejected.",
+    "Name and Father's Name must be mentioned on the backside of photographs.",
+    "Please fill the form carefully.",
+    "Attach all required documents.",
+    "Incomplete form will be rejected."
+  ],
+  "special_areas": [
+    {
+      "type": "image_upload",
+      "label": "Paste Photograph",
+      "requirements": "passport size",
+      "coordinates": null
+    },
+    {
+      "type": "image_upload",
+      "label": "Paste Photograph (attested from front)",
+      "requirements": "passport size, light blue background",
+      "coordinates": null
+    }
+  ]
+}

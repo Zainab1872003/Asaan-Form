@@ -1,7 +1,6 @@
 # -------- Secrets / Sensitive --------
 .env
 .env.*
-llm_call/
 faiqa/
 
 # -------- Python --------

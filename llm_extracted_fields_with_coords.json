@@ -1,0 +1,1088 @@
+{
+  "form_fields": [
+    {
+      "field_name": "Category",
+      "field_key": "category",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        59.74468485514323,
+        952.258066813151,
+        124.5957539876302,
+        938.3225809733073
+      ],
+      "span": {
+        "offset": 0,
+        "length": 11
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Examination",
+      "field_key": "examination",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        223.1489461263021,
+        952.258066813151,
+        297.7021484375,
+        939.3548431396484
+      ],
+      "span": {
+        "offset": 0,
+        "length": 12
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Annual/Supplementary",
+      "field_key": "annual_supplementary",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        345.1914876302083,
+        950.1935526529948,
+        467.7447102864583,
+        939.8709716796875
+      ],
+      "span": {
+        "offset": 0,
+        "length": 22
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Medium",
+      "field_key": "medium",
+      "field_type": "dropdown",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        655.1489664713541,
+        942.4516143798828,
+        697.0213216145834,
+        933.6774190266927
+      ],
+      "span": {
+        "offset": 0,
+        "length": 11
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Registration No.",
+      "field_key": "registration_number",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        58.2127685546875,
+        928.5161336263021,
+        147.57447306315103,
+        908.9032287597656
+      ],
+      "span": {
+        "offset": 0,
+        "length": 37
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Registration Number",
+      "field_key": "registration_number_value",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        588.2553304036459,
+        916.6451619466146,
+        649.0212809244791,
+        902.1935526529948
+      ],
+      "span": {
+        "offset": 0,
+        "length": 14
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Name of Candidate",
+      "field_key": "name_of_candidate",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        58.72340393066406,
+        905.8064575195312,
+        162.89362589518228,
+        877.4193623860677
+      ],
+      "span": {
+        "offset": 0,
+        "length": 55
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Photograph",
+      "field_key": "photograph",
+      "field_type": "image_upload",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        611.2340494791666,
+        854.1935526529948,
+        687.829833984375,
+        835.0967814127604
+      ],
+      "span": {
+        "offset": 0,
+        "length": 22
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "C.N.I.C.NO.",
+      "field_key": "cnic_no",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        58.72340393066406,
+        832.5161336263021,
+        128.68085734049478,
+        819.0967814127604
+      ],
+      "span": {
+        "offset": 0,
+        "length": 13
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Without attestation",
+      "field_key": "without_attestation",
+      "field_type": "checkbox",
+      "required": false,
+      "validation": null,
+      "coordinates": [
+        594.3830159505209,
+        822.7096761067709,
+        674.0425618489584,
+        811.8709716796875
+      ],
+      "span": {
+        "offset": 0,
+        "length": 19
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Father's Name",
+      "field_key": "fathers_name",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        58.72340393066406,
+        812.3871053059896,
+        142.46808878580728,
+        793.2903238932291
+      ],
+      "span": {
+        "offset": 0,
+        "length": 25
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Light blue background",
+      "field_key": "light_blue_background",
+      "field_type": "text_input",
+      "required": false,
+      "validation": null,
+      "coordinates": [
+        594.3830159505209,
+        807.2258097330729,
+        692.9361979166666,
+        798.4516194661459
+      ],
+      "span": {
+        "offset": 0,
+        "length": 20
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Father's C.N.I.C.No",
+      "field_key": "fathers_cnic_no",
+      "field_type": "text_input",
+      "required": true,
+      "validation": "numeric",
+      "coordinates": [
+        59.23404439290365,
+        741.6774291992188,
+        165.44681803385416,
+        730.3225911458333
+      ],
+      "span": {
+        "offset": 0,
+        "length": 21
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "PresentAddress (Forcorrespondence)",
+      "field_key": "present_address",
+      "field_type": "textarea",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        58.72340393066406,
+        722.5806477864583,
+        150.6383056640625,
+        703.48388671875
+      ],
+      "span": {
+        "offset": 0,
+        "length": 36
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "PermanentDistrict",
+      "field_key": "permanent_district",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        70.97872416178386,
+        647.741943359375,
+        155.74468994140625,
+        635.8709716796875
+      ],
+      "span": {
+        "offset": 0,
+        "length": 17
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Thumb Improsslon",
+      "field_key": "thumb_impression",
+      "field_type": "signature",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        611.7447102864584,
+        647.741943359375,
+        685.276611328125,
+        638.9677734375
+      ],
+      "span": {
+        "offset": 0,
+        "length": 16
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Nationality",
+      "field_key": "nationality",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        70.97872416178386,
+        625.0322672526042,
+        116.425537109375,
+        614.7096761067708
+      ],
+      "span": {
+        "offset": 0,
+        "length": 11
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Religion",
+      "field_key": "religion",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        233.87235514322916,
+        625.5483805338542,
+        273.70212809244794,
+        614.7096761067708
+      ],
+      "span": {
+        "offset": 0,
+        "length": 8
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "DateofBirth",
+      "field_key": "date_of_birth",
+      "field_type": "date",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        392.1702473958333,
+        624.0,
+        449.3617350260417,
+        615.225830078125
+      ],
+      "span": {
+        "offset": 0,
+        "length": 11
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Name of Centre (City) (Atwtich to appoar)",
+      "field_key": "centre_name",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        59.23404439290365,
+        598.1935628255208,
+        171.5744832356771,
+        579.0968017578125
+      ],
+      "span": {
+        "offset": 0,
+        "length": 43
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Part-I(A) Compulsory Papers",
+      "field_key": "part_i_a_compulsory_papers",
+      "field_type": "text",
+      "required": false,
+      "validation": null,
+      "coordinates": [
+        59.23404439290365,
+        579.0968017578125,
+        211.9148966471354,
+        566.1935628255208
+      ],
+      "span": {
+        "offset": 0,
+        "length": 30
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Philosophy & History of Education",
+      "field_key": "philosophy_history_of_education",
+      "field_type": "checkbox",
+      "required": false,
+      "validation": null,
+      "coordinates": [
+        73.53191630045573,
+        565.6774495442708,
+        252.25533040364584,
+        552.2580973307292
+      ],
+      "span": {
+        "offset": 0,
+        "length": 33
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Educational Psychology",
+      "field_key": "educational_psychology",
+      "field_type": "checkbox",
+      "required": false,
+      "validation": null,
+      "coordinates": [
+        277.276611328125,
+        566.1935628255208,
+        409.5319417317708,
+        552.2580973307292
+      ],
+      "span": {
+        "offset": 0,
+        "length": 26
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "School Organization",
+      "field_key": "school_organization",
+      "field_type": "checkbox",
+      "required": false,
+      "validation": null,
+      "coordinates": [
+        439.1489664713542,
+        565.1612955729167,
+        557.1064046223959,
+        553.2903238932292
+      ],
+      "span": {
+        "offset": 0,
+        "length": 23
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Islamiyat / Islamic History & Muslim Culture / Pakistan Studies",
+      "field_key": "islamiyat_islamic_history_muslim_culture_pakistan_studies",
+      "field_type": "checkbox",
+      "required": false,
+      "validation": null,
+      "coordinates": [
+        74.55319213867188,
+        552.2580973307292,
+        404.9361979166667,
+        541.4193522135417
+      ],
+      "span": {
+        "offset": 0,
+        "length": 65
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "English Language and Literature / Urdu Language and Literature",
+      "field_key": "english_language_urdu_language",
+      "field_type": "checkbox",
+      "required": false,
+      "validation": null,
+      "coordinates": [
+        74.55319213867188,
+        539.8709716796875,
+        417.1914876302083,
+        529.0322672526042
+      ],
+      "span": {
+        "offset": 0,
+        "length": 64
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Elective Papers (Method of Teaching)",
+      "field_key": "elective_papers_method_of_teaching",
+      "field_type": "text",
+      "required": false,
+      "validation": null,
+      "coordinates": [
+        70.97872416178386,
+        526.9677734375,
+        347.7447102864583,
+        514.5806477864583
+      ],
+      "span": {
+        "offset": 0,
+        "length": 49
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Select two subjects from any group",
+      "field_key": "select_two_subjects",
+      "field_type": "instruction",
+      "required": false,
+      "validation": null,
+      "coordinates": [
+        72.00000508626302,
+        513.5484212239583,
+        335.4893798828125,
+        501.67744954427087
+      ],
+      "span": {
+        "offset": 0,
+        "length": 45
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Arts / Humanities Group",
+      "field_key": "arts_humanities_group",
+      "field_type": "checkbox",
+      "required": false,
+      "validation": null,
+      "coordinates": [
+        70.97872416178386,
+        501.16129557291663,
+        323.2340494791667,
+        487.225830078125
+      ],
+      "span": {
+        "offset": 0,
+        "length": 51
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Elective Subjects",
+      "field_key": "elective_subjects",
+      "field_type": "checkbox",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        84.76596069335938,
+        487.225830078125,
+        289.53192138671875,
+        476.90323893229163
+      ],
+      "span": {
+        "offset": 0,
+        "length": 38
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Please mention here your elective subjects selected above",
+      "field_key": "elective_subjects_selected",
+      "field_type": "text_input",
+      "required": false,
+      "validation": null,
+      "coordinates": [
+        71.48936462402344,
+        435.6129150390625,
+        403.4042561848958,
+        425.29032389322913
+      ],
+      "span": {
+        "offset": 0,
+        "length": 64
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "",
+      "field_key": "elective_subjects_selected_above",
+      "field_type": "text_input",
+      "required": false,
+      "validation": null,
+      "coordinates": [
+        469.276611328125,
+        435.0968017578125,
+        486.127685546875,
+        425.80647786458337
+      ],
+      "span": {
+        "offset": 0,
+        "length": 2
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Part II - Practice in Teaching (Practical Skill in Teaching)",
+      "field_key": "part_ii_practice_in_teaching",
+      "field_type": "text_input",
+      "required": false,
+      "validation": null,
+      "coordinates": [
+        70.97872416178386,
+        421.67744954427087,
+        338.55320231119794,
+        409.80647786458337
+      ],
+      "span": {
+        "offset": 0,
+        "length": 52
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "For compartment/exemption candidate",
+      "field_key": "compartment_exemption_candidate",
+      "field_type": "text_input",
+      "required": false,
+      "validation": null,
+      "coordinates": [
+        54.1276601155599,
+        408.25809733072913,
+        254.2978719075521,
+        395.8709716796875
+      ],
+      "span": {
+        "offset": 0,
+        "length": 37
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Year of last appearing in Examination",
+      "field_key": "year_of_last_appearing_in_examination",
+      "field_type": "text_input",
+      "required": false,
+      "validation": null,
+      "coordinates": [
+        71.48936462402344,
+        393.80647786458337,
+        503.4893798828125,
+        380.90323893229163
+      ],
+      "span": {
+        "offset": 0,
+        "length": 69
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "B.Ed",
+      "field_key": "bed",
+      "field_type": "text_input",
+      "required": false,
+      "validation": null,
+      "coordinates": [
+        206.2978719075521,
+        384.0,
+        225.7021280924479,
+        376.77421061197913
+      ],
+      "span": {
+        "offset": 0,
+        "length": 6
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Fee Information",
+      "field_key": "fee_information",
+      "field_type": "text_input",
+      "required": false,
+      "validation": null,
+      "coordinates": [
+        55.14893595377604,
+        374.19356282552087,
+        153.70213826497397,
+        361.80647786458337
+      ],
+      "span": {
+        "offset": 0,
+        "length": 19
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Amount",
+      "field_key": "amount",
+      "field_type": "text_input",
+      "required": false,
+      "validation": null,
+      "coordinates": [
+        83.23404439290364,
+        358.19356282552087,
+        125.10638427734375,
+        345.80647786458337
+      ],
+      "span": {
+        "offset": 0,
+        "length": 6
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Bank Challan No.",
+      "field_key": "bank_challan_no",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        198.6383056640625,
+        358.19356282552087,
+        284.93617757161456,
+        346.32259114583337
+      ],
+      "span": {
+        "offset": 0,
+        "length": 16
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Date",
+      "field_key": "date",
+      "field_type": "date",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        387.574462890625,
+        357.16129557291663,
+        411.0638427734375,
+        347.8709716796875
+      ],
+      "span": {
+        "offset": 0,
+        "length": 4
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Branch Name",
+      "field_key": "branch_name",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        82.72340901692708,
+        339.09676106770837,
+        151.65957641601562,
+        326.193603515625
+      ],
+      "span": {
+        "offset": 0,
+        "length": 11
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Passing Yearof",
+      "field_key": "passing_yearof",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        151.1489461263021,
+        305.03230794270837,
+        186.38299560546875,
+        285.93546549479163
+      ],
+      "span": {
+        "offset": 0,
+        "length": 14
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Examinaion",
+      "field_key": "examinaion",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        187.9148966471354,
+        306.06453450520837,
+        238.46809895833334,
+        294.709716796875
+      ],
+      "span": {
+        "offset": 0,
+        "length": 10
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Passedas",
+      "field_key": "passedas",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        238.46809895833334,
+        305.54842122395837,
+        283.4042561848958,
+        294.193603515625
+      ],
+      "span": {
+        "offset": 0,
+        "length": 8
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Roll No.",
+      "field_key": "roll_no",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        299.2340494791667,
+        300.38712565104163,
+        330.38299560546875,
+        289.54842122395837
+      ],
+      "span": {
+        "offset": 0,
+        "length": 8
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Marks",
+      "field_key": "marks",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        352.3404541015625,
+        301.93546549479163,
+        377.8723551432292,
+        290.58064778645837
+      ],
+      "span": {
+        "offset": 0,
+        "length": 5
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Division",
+      "field_key": "division",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        385.0212809244792,
+        301.41935221354163,
+        416.1702473958333,
+        290.58064778645837
+      ],
+      "span": {
+        "offset": 0,
+        "length": 8
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Board/University",
+      "field_key": "board_university",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        458.55322265625,
+        300.90323893229163,
+        522.8936360677084,
+        289.03230794270837
+      ],
+      "span": {
+        "offset": 0,
+        "length": 16
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Name of recognised Institution",
+      "field_key": "name_of_recognised_institution",
+      "field_type": "textarea",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        54.1276601155599,
+        252.90323893229163,
+        241.02128092447916,
+        241.03230794270837
+      ],
+      "span": {
+        "offset": 0,
+        "length": 35
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Date of appointment",
+      "field_key": "date_of_appointment",
+      "field_type": "date",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        54.63830057779948,
+        230.709716796875,
+        174.6383056640625,
+        220.38712565104163
+      ],
+      "span": {
+        "offset": 0,
+        "length": 20
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Period of Service",
+      "field_key": "period_of_service",
+      "field_type": "textarea",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        292.59576416015625,
+        231.225830078125,
+        408.0,
+        220.90323893229163
+      ],
+      "span": {
+        "offset": 0,
+        "length": 18
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "School Registration No.(lncase ofPrivate School)",
+      "field_key": "school_registration_number",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        54.63830057779948,
+        211.09676106770837,
+        319.14894612630206,
+        200.77425130208337
+      ],
+      "span": {
+        "offset": 0,
+        "length": 51
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "PermanentAddress:",
+      "field_key": "permanent_address",
+      "field_type": "textarea",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        331.40427652994794,
+        163.09676106770837,
+        436.5957438151042,
+        152.77425130208337
+      ],
+      "span": {
+        "offset": 0,
+        "length": 17
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "(Name and Fathers Name mustbe montionod onthe back side ofphotographs)",
+      "field_key": "name_and_fathers_name",
+      "field_type": "textarea",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        593.3617350260416,
+        165.67740885416663,
+        703.6595865885416,
+        136.77425130208337
+      ],
+      "span": {
+        "offset": 0,
+        "length": 70
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Contact Numbor:",
+      "field_key": "contact_number",
+      "field_type": "text_input",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        299.2340494791667,
+        116.12906901041663,
+        367.1489664713542,
+        104.77425130208337
+      ],
+      "span": {
+        "offset": 0,
+        "length": 15
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "(In case of Female Candidale, ccnlact number of Fathen’Guardian can also be mentioned)",
+      "field_key": "contact_number_guardian",
+      "field_type": "textarea",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        299.2340494791667,
+        103.225830078125,
+        566.8085123697916,
+        93.41935221354163
+      ],
+      "span": {
+        "offset": 0,
+        "length": 86
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "SignatureoftheCandidate:.",
+      "field_key": "signature_of_candidate",
+      "field_type": "signature",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        72.51064046223958,
+        162.06453450520837,
+        219.0638427734375,
+        151.741943359375
+      ],
+      "span": {
+        "offset": 0,
+        "length": 25
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Signature of the Head of the Institution",
+      "field_key": "signature_head_institution",
+      "field_type": "signature",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        63.31915283203125,
+        63.48388671875,
+        279.8297932942708,
+        27.87101236979163
+      ],
+      "span": {
+        "offset": 0,
+        "length": 76
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Gender",
+      "field_key": "gender",
+      "field_type": "dropdown",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        502.978759765625,
+        950.7096811930338,
+        547.9149169921875,
+        939.8709716796875
+      ],
+      "span": {
+        "offset": 0,
+        "length": 7
+      },
+      "page_number": 1
+    },
+    {
+      "field_name": "Counter Signature of the District Education Officer",
+      "field_key": "counter_signature_district_education_officer",
+      "field_type": "signature",
+      "required": true,
+      "validation": null,
+      "coordinates": [
+        395.7447102864583,
+        61.41935221354163,
+        529.5319417317709,
+        27.87101236979163
+      ],
+      "span": {
+        "offset": 0,
+        "length": 64
+      },
+      "page_number": 1
+    }
+  ],
+  "instructions": [
+    "Circle/Select two subjects by choice from any group:"
+  ],
+  "special_areas": []
+}

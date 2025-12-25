@@ -1,418 +1,393 @@
+from groq import Groq
+from dotenv import load_dotenv
 import os
 import json
-from typing import List, Optional, Union
-from pydantic import BaseModel
-from groq import Groq
 import time
-from dotenv import load_dotenv
+from typing import List, Dict, Union
 
+# Load environment variables
 load_dotenv()
 
-
-class FormField(BaseModel):
-    field_name: str
-    field_type: str
-    coordinates: List[float]
-    span: dict
-    required_info: str
-    instructions: Optional[str] = None
-    confidence: float
-    page_number: Optional[int] = None
+# Initialize Groq client
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 
-class FormExtraction(BaseModel):
-    fields: List[FormField]
+def load_markdown(file_path):
+    """Load markdown file content"""
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            return f.read()
+    except FileNotFoundError:
+        print(f"Error: {file_path} not found")
+        return None
 
 
-def estimate_tokens(text: str) -> int:
-    """Rough token estimation (4 chars per token)"""
-    return len(text) // 4
+def load_json(file_path):
+    """Load JSON file content"""
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        print(f"Error: {file_path} not found")
+        return None
+    except json.JSONDecodeError as e:
+        print(f"Error parsing JSON: {e}")
+        return None
 
 
-def chunk_json_by_tokens(json_data: Union[dict, list], max_tokens: int = 3000) -> List[dict]:
+def chunk_json_by_size(json_data: Union[dict, list], max_chars: int = 8000) -> List[str]:
     """
-    Split JSON data into chunks by token count
-    
-    Args:
-        json_data: Full document JSON
-        max_tokens: Maximum tokens per chunk
-    
-    Returns:
-        List of JSON chunks
+    Split JSON into chunks - focusing on the texts array
     """
-    json_str = json.dumps(json_data, ensure_ascii=False)
-    total_tokens = estimate_tokens(json_str)
+    json_str = json.dumps(json_data, indent=2, ensure_ascii=False)
+    total_chars = len(json_str)
     
-    print(f"📊 Total JSON size: ~{total_tokens:,} tokens")
-    print(f"   Target: {max_tokens} tokens per chunk")
+    print(f"📊 JSON size: {total_chars:,} characters")
+    print(f"   Target: {max_chars:,} characters per chunk")
     
     # If small enough, return as single chunk
-    if total_tokens <= max_tokens:
+    if total_chars <= max_chars:
         print(f"   ✓ JSON fits in single chunk")
-        return [json_data]
+        return [json_str]
     
     chunks = []
-    num_chunks_needed = (total_tokens // max_tokens) + 1
     
-    # Handle different JSON structures
-    if isinstance(json_data, dict) and 'pages' in json_data:
-        pages = json_data['pages']
-        metadata = json_data.get('metadata', {})
+    # Extract the texts array if it exists
+    if isinstance(json_data, dict) and 'texts' in json_data:
+        texts = json_data['texts']
+        metadata = {k: v for k, v in json_data.items() if k != 'texts'}
         
-        # Handle pages as list
-        if isinstance(pages, list):
-            print(f"   Found {len(pages)} pages in list format")
-            items_per_chunk = max(1, len(pages) // num_chunks_needed)
-            
-            for i in range(0, len(pages), items_per_chunk):
-                chunk_pages = pages[i:i + items_per_chunk]
-                chunk = {
-                    'pages': chunk_pages,
-                    'metadata': metadata,
-                    'chunk_index': len(chunks) + 1,
-                    'total_chunks': 'TBD'
-                }
-                chunks.append(chunk)
+        print(f"   Found {len(texts)} text items")
         
-        # Handle pages as dict
-        elif isinstance(pages, dict):
-            print(f"   Found {len(pages)} pages in dict format")
-            page_items = list(pages.items())
-            items_per_chunk = max(1, len(page_items) // num_chunks_needed)
-            
-            for i in range(0, len(page_items), items_per_chunk):
-                chunk_items = dict(page_items[i:i + items_per_chunk])
-                chunk = {
-                    'pages': chunk_items,
-                    'metadata': metadata,
-                    'chunk_index': len(chunks) + 1,
-                    'total_chunks': 'TBD'
-                }
-                chunks.append(chunk)
-    
-    # Handle JSON as list
-    elif isinstance(json_data, list):
-        print(f"   JSON is a list with {len(json_data)} items")
-        items_per_chunk = max(1, len(json_data) // num_chunks_needed)
+        # Calculate items per chunk
+        num_chunks = (total_chars // max_chars) + 1
+        items_per_chunk = max(5, len(texts) // num_chunks)  # At least 5 items per chunk
         
-        for i in range(0, len(json_data), items_per_chunk):
-            chunk_items = json_data[i:i + items_per_chunk]
-            chunk = {
-                'data': chunk_items,
-                'chunk_index': len(chunks) + 1,
-                'total_chunks': 'TBD'
+        for i in range(0, len(texts), items_per_chunk):
+            chunk_items = texts[i:i + items_per_chunk]
+            chunk_data = {
+                'texts': chunk_items,
+                'metadata': metadata.get('origin', {}),
+                'chunk_info': f'items {i} to {i + len(chunk_items) - 1} of {len(texts)}'
             }
-            chunks.append(chunk)
-    
-    # Handle JSON as dict (other structures)
-    elif isinstance(json_data, dict):
-        print(f"   JSON is a dict with {len(json_data)} keys")
-        items = list(json_data.items())
-        items_per_chunk = max(1, len(items) // num_chunks_needed)
+            chunk_str = json.dumps(chunk_data, indent=2, ensure_ascii=False)
+            chunks.append(chunk_str)
         
-        for i in range(0, len(items), items_per_chunk):
-            chunk_items = dict(items[i:i + items_per_chunk])
-            chunk_items['chunk_index'] = len(chunks) + 1
-            chunk_items['total_chunks'] = 'TBD'
-            chunks.append(chunk_items)
-    
-    else:
-        # Fallback
-        chunks = [json_data]
-    
-    # Update total_chunks count
-    for chunk in chunks:
-        if isinstance(chunk, dict) and 'total_chunks' in chunk:
-            chunk['total_chunks'] = len(chunks)
-    
-    # Verify chunk sizes
-    for i, chunk in enumerate(chunks):
-        chunk_tokens = estimate_tokens(json.dumps(chunk, ensure_ascii=False))
-        print(f"   Chunk {i+1}: ~{chunk_tokens} tokens")
+        print(f"   ✓ Created {len(chunks)} JSON chunks")
+        for idx, chunk in enumerate(chunks, 1):
+            print(f"      Chunk {idx}: {len(chunk):,} characters")
         
-        # If still too large, split further
-        if chunk_tokens > max_tokens * 1.2:  # 20% buffer
-            print(f"   ⚠️ Chunk {i+1} still too large, will be truncated")
+        return chunks
     
-    print(f"   ✓ Created {len(chunks)} JSON chunks")
-    return chunks
+    # Fallback: split by character count
+    print(f"   Using fallback: chunking raw JSON string")
+    for i in range(0, total_chars, max_chars):
+        chunks.append(json_str[i:i + max_chars])
+    
+    return chunks if chunks else [json_str[:max_chars]]
 
 
-def extract_form_fields_batch(
-    markdown_content: str,
-    json_content: dict,
-    api_key: str,
-    max_json_tokens: int = 3000,
-    delay_between_calls: float = 1.0
-) -> FormExtraction:
+def extract_fields_with_llm(markdown_content: str, json_chunk: str, chunk_num: int, total_chunks: int):
     """
-    Extract form fields by processing JSON in chunks while passing full markdown each time
-    
-    Args:
-        markdown_content: Full markdown text (passed to every API call)
-        json_content: Full JSON metadata (will be chunked)
-        api_key: Groq API key
-        max_json_tokens: Maximum tokens for JSON per API call
-        delay_between_calls: Delay in seconds between API calls
-    
-    Returns:
-        Aggregated FormExtraction with all fields
+    Extract fields with coordinates and span from one JSON chunk
     """
     
-    client = Groq(api_key=api_key)
-    
-    # Check markdown size
-    md_tokens = estimate_tokens(markdown_content)
-    print(f"📊 Markdown size: ~{md_tokens:,} tokens")
-    
-    # Truncate markdown if too large (leaving room for JSON and prompt)
-    max_md_tokens = 1500
-    if md_tokens > max_md_tokens:
-        print(f"   ⚠️ Markdown too large, truncating to {max_md_tokens} tokens")
-        markdown_preview = markdown_content[:max_md_tokens * 4]  # ~4 chars per token
-    else:
-        markdown_preview = markdown_content
-    
-    # Split JSON into chunks
-    print("\n📦 Chunking JSON data...")
-    json_chunks = chunk_json_by_tokens(json_content, max_json_tokens)
-    
-    print(f"\n🔄 Will process {len(json_chunks)} API calls")
-    print(f"{'='*60}\n")
-    
-    all_fields = []
-    
-    # Process each JSON chunk with full markdown
-    for idx, json_chunk in enumerate(json_chunks, 1):
-        print(f"🔍 API Call {idx}/{len(json_chunks)}")
-        print(f"   Processing JSON chunk {idx}...")
-        
-        # Prepare JSON chunk (with size check)
-        json_str = json.dumps(json_chunk, indent=2, ensure_ascii=False)
-        json_tokens = estimate_tokens(json_str)
-        
-        # Truncate if still too large
-        if json_tokens > max_json_tokens:
-            print(f"   ⚠️ Truncating JSON from {json_tokens} to {max_json_tokens} tokens")
-            json_str = json_str[:max_json_tokens * 4]
-        
-        print(f"   Prompt size: ~{estimate_tokens(markdown_preview + json_str)} tokens")
-        
-        prompt = f"""Extract form fields from this document. You are processing chunk {idx} of {len(json_chunks)}.
+    prompt = f"""
+You are a form analysis expert. Extract form fields from the JSON chunk provided.
 
-**IMPORTANT:** Extract ALL form fields you find in the provided JSON metadata below.
+**THIS IS CHUNK {chunk_num} OF {total_chunks}**
 
-**Required JSON output format:**
+**FULL FORM MARKDOWN (for context):**
+{markdown_content}
+
+**JSON METADATA CHUNK ({chunk_num}/{total_chunks}):**
+{json_chunk}
+
+**EXTRACTION INSTRUCTIONS:**
+
+1. **Field Identification**: Look for text items in the JSON that represent form field labels (like "Name", "Registration No.", "Date of Birth", etc.)
+
+2. **Coordinates Extraction**: Each text item has a "prov" array. Extract bbox coordinates:
+   - bbox.l = left (x1)
+   - bbox.t = top (y1)  
+   - bbox.r = right (x2)
+   - bbox.b = bottom (y2)
+   - Example: {{"l": 59.74, "t": 952.25, "r": 124.59, "b": 938.32}} → [59.74, 952.25, 124.59, 938.32]
+
+3. **Span Extraction**: Extract "charspan" from prov array:
+   - charspan: [start, end] → {{"offset": start, "length": end - start}}
+   - Example: "charspan": [0, 11] → {{"offset": 0, "length": 11}}
+
+4. **Page Number**: Extract "page_no" from prov array
+
+**OUTPUT FORMAT:**
 {{
-  "fields": [
+  "form_fields": [
     {{
-      "field_name": "Full Name",
-      "field_type": "text",
-      "coordinates": [100.5, 200.3, 300.7, 220.8],
-      "span": {{"offset": 123, "length": 10}},
-      "required_info": "User's complete legal name",
-      "instructions": null,
-      "confidence": 0.95,
+      "field_name": "Registration No.",
+      "field_key": "registration_number",
+      "field_type": "text_input",
+      "required": true,
+      "validation": "numeric",
+      "coordinates": [59.74, 952.25, 124.59, 938.32],
+      "span": {{"offset": 0, "length": 11}},
       "page_number": 1
     }}
-  ]
+  ],
+  "instructions": [],
+  "special_areas": []
 }}
 
-**Field types:** text, checkbox, radio, dropdown, signature, date, number, email, phone, address, textarea
+**FIELD TYPES**: text_input, textarea, date, checkbox, signature, dropdown, image_upload
 
-**Document Markdown (for context):**
-{markdown_preview}
+Extract ALL form fields found in this chunk with their coordinates and span data.
+"""
 
-**JSON Metadata (Chunk {idx}/{len(json_chunks)}):**
-{json_str}
-
-Extract ALL form fields from the JSON metadata above. Return ONLY valid JSON."""
-
-        try:
-            response = client.chat.completions.create(
-                model="llama-3.3-70b-versatile",
-                messages=[
-                    {
-                        "role": "system",
-                        "content": "You are a form field extraction expert. Extract ALL form fields from the provided JSON metadata and return valid JSON only."
+    try:
+        response = client.chat.completions.create(
+            model="meta-llama/llama-4-scout-17b-16e-instruct",
+            messages=[
+                {"role": "system", "content": "You are a form extraction expert. Extract form fields with precise coordinates (bbox) and span (charspan) from JSON metadata."},
+                {"role": "user", "content": prompt}
+            ],
+            response_format={"type": "json_schema", "json_schema": {
+                "name": "form_extraction",
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "form_fields": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "field_name": {"type": "string"},
+                                    "field_key": {"type": "string"},
+                                    "field_type": {"type": "string"},
+                                    "required": {"type": "boolean"},
+                                    "validation": {"anyOf": [{"type": "string"}, {"type": "null"}]},
+                                    "coordinates": {
+                                        "anyOf": [
+                                            {
+                                                "type": "array",
+                                                "items": {"type": "number"},
+                                                "minItems": 4,
+                                                "maxItems": 4
+                                            },
+                                            {"type": "null"}
+                                        ]
+                                    },
+                                    "span": {
+                                        "anyOf": [
+                                            {
+                                                "type": "object",
+                                                "properties": {
+                                                    "offset": {"type": "integer"},
+                                                    "length": {"type": "integer"}
+                                                },
+                                                "required": ["offset", "length"]
+                                            },
+                                            {"type": "null"}
+                                        ]
+                                    },
+                                    "page_number": {"anyOf": [{"type": "integer"}, {"type": "null"}]}
+                                },
+                                "required": ["field_name", "field_key", "field_type", "required"]
+                            }
+                        },
+                        "instructions": {"type": "array", "items": {"type": "string"}},
+                        "special_areas": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {"type": "string"},
+                                    "label": {"type": "string"},
+                                    "requirements": {"anyOf": [{"type": "string"}, {"type": "null"}]},
+                                    "coordinates": {
+                                        "anyOf": [
+                                            {"type": "array", "items": {"type": "number"}},
+                                            {"type": "null"}
+                                        ]
+                                    }
+                                },
+                                "required": ["type", "label"]
+                            }
+                        }
                     },
-                    {
-                        "role": "user",
-                        "content": prompt
-                    }
-                ],
-                response_format={"type": "json_object"},
-                temperature=0.1,
-                max_tokens=4000
-            )
-            
-            # Parse response
-            content = json.loads(response.choices[0].message.content)
-            
-            # Extract fields
-            if 'fields' in content and isinstance(content['fields'], list):
-                fields_found = 0
-                
-                for field_dict in content['fields']:
-                    try:
-                        # Set page_number if missing
-                        if 'page_number' not in field_dict or field_dict['page_number'] is None:
-                            field_dict['page_number'] = idx
-                        
-                        # Validate before creating
-                        if validate_field(field_dict):
-                            field = FormField(**field_dict)
-                            all_fields.append(field)
-                            fields_found += 1
-                        else:
-                            print(f"   ⚠️ Invalid field structure, skipping")
-                    
-                    except Exception as e:
-                        print(f"   ⚠️ Error creating field: {str(e)[:60]}")
-                        continue
-                
-                print(f"   ✅ Extracted {fields_found} fields from chunk {idx}")
-            
-            else:
-                print(f"   ⚠️ No 'fields' array in response")
-            
-            # Rate limiting delay (not on last chunk)
-            if idx < len(json_chunks):
-                print(f"   ⏳ Waiting {delay_between_calls}s before next call...\n")
-                time.sleep(delay_between_calls)
-        
-        except Exception as e:
-            print(f"   ❌ API Error: {str(e)[:100]}")
-            print(f"   Continuing with next chunk...\n")
-            continue
-    
-    print(f"\n{'='*60}")
-    print(f"✅ Completed {len(json_chunks)} API calls")
-    print(f"✅ Total fields extracted: {len(all_fields)}")
-    
-    # Remove duplicates
-    unique_fields = []
-    seen = set()
-    
-    for field in all_fields:
-        # Create unique key from name and approximate position
-        coord_key = tuple(round(c, 1) for c in field.coordinates[:2]) if field.coordinates else (0, 0)
-        key = (field.field_name.lower().strip(), coord_key)
-        
-        if key not in seen:
-            seen.add(key)
-            unique_fields.append(field)
-    
-    if len(unique_fields) < len(all_fields):
-        print(f"🔄 Removed {len(all_fields) - len(unique_fields)} duplicate fields")
-    
-    print(f"📊 Final unique fields: {len(unique_fields)}")
-    
-    return FormExtraction(fields=unique_fields)
-
-
-def validate_field(field_dict: dict) -> bool:
-    """Validate field has required structure"""
-    required_keys = ['field_name', 'field_type', 'coordinates', 'span', 'required_info', 'confidence']
-    
-    # Check required keys
-    if not all(k in field_dict for k in required_keys):
-        return False
-    
-    # Validate coordinates
-    if not isinstance(field_dict['coordinates'], list):
-        return False
-    if len(field_dict['coordinates']) != 4:
-        return False
-    
-    # Validate span
-    if not isinstance(field_dict['span'], dict):
-        return False
-    if 'offset' not in field_dict['span'] or 'length' not in field_dict['span']:
-        return False
-    
-    # Validate confidence is a number
-    try:
-        float(field_dict['confidence'])
-    except:
-        return False
-    
-    return True
-
-
-# Main execution
-if __name__ == "__main__":
-    GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-    
-    if not GROQ_API_KEY:
-        print("❌ Error: GROQ_API_KEY not found in environment variables")
-        print("   Please add GROQ_API_KEY=your_key_here to your .env file")
-        exit(1)
-    
-    # Load files
-    try:
-        print("📂 Loading files...")
-        
-        with open("output/form1.md", "r", encoding="utf-8") as f:
-            markdown_data = f.read()
-        print(f"   ✓ Loaded markdown: {len(markdown_data)} characters")
-        
-        with open("output/form1.json", "r", encoding="utf-8") as f:
-            json_data = json.load(f)
-        print(f"   ✓ Loaded JSON")
-    
-    except FileNotFoundError as e:
-        print(f"❌ File not found: {e}")
-        exit(1)
-    
-    except json.JSONDecodeError as e:
-        print(f"❌ Invalid JSON file: {e}")
-        exit(1)
-    
-    # Extract form fields
-    try:
-        print(f"\n{'='*60}")
-        print("🚀 Starting Form Field Extraction")
-        print(f"{'='*60}\n")
-        
-        extraction = extract_form_fields_batch(
-            markdown_content=markdown_data,
-            json_content=json_data,
-            api_key=GROQ_API_KEY,
-            max_json_tokens=3000,  # Max 3000 tokens per JSON chunk
-            delay_between_calls=1.0  # 1 second delay
+                    "required": ["form_fields", "instructions", "special_areas"]
+                }
+            }},
+            temperature=0.1,
+            max_tokens=8000
         )
         
-        # Display results
-        print(f"\n{'='*60}")
-        print("📊 EXTRACTION RESULTS")
-        print(f"{'='*60}\n")
-        
-        for idx, field in enumerate(extraction.fields, 1):
-            print(f"{idx}. {field.field_name}")
-            print(f"   Type: {field.field_type}")
-            print(f"   Coordinates: {field.coordinates}")
-            print(f"   Required: {field.required_info[:70]}...")
-            if field.instructions:
-                print(f"   Instructions: {field.instructions[:70]}...")
-            print(f"   Confidence: {field.confidence:.2f}")
-            print(f"   Page/Chunk: {field.page_number or 'N/A'}")
-            print()
-        
-        # Save to file
-        output_path = "extracted_fields.json"
-        with open(output_path, "w", encoding="utf-8") as f:
-            json.dump(extraction.model_dump(), f, indent=2, ensure_ascii=False)
-        
-        print(f"{'='*60}")
-        print(f"✅ Extraction complete!")
-        print(f"✅ Saved {len(extraction.fields)} fields to {output_path}")
-        print(f"{'='*60}")
-    
-    except KeyboardInterrupt:
-        print("\n\n⚠️ Extraction interrupted by user")
+        return json.loads(response.choices[0].message.content)
     
     except Exception as e:
-        print(f"\n❌ Fatal error: {e}")
+        print(f"   ❌ API Error: {str(e)[:100]}")
+        return None
+
+
+def merge_extractions(all_extractions: List[Dict]) -> Dict:
+    """Merge multiple extraction results"""
+    merged = {
+        "form_fields": [],
+        "instructions": [],
+        "special_areas": []
+    }
+    
+    seen_fields = set()
+    seen_instructions = set()
+    seen_special = set()
+    
+    for extraction in all_extractions:
+        for field in extraction.get('form_fields', []):
+            field_key = field.get('field_key', '')
+            if field_key and field_key not in seen_fields:
+                seen_fields.add(field_key)
+                merged['form_fields'].append(field)
+        
+        for instruction in extraction.get('instructions', []):
+            if instruction and instruction not in seen_instructions:
+                seen_instructions.add(instruction)
+                merged['instructions'].append(instruction)
+        
+        for area in extraction.get('special_areas', []):
+            area_key = area.get('label', '')
+            if area_key and area_key not in seen_special:
+                seen_special.add(area_key)
+                merged['special_areas'].append(area)
+    
+    return merged
+
+
+def main():
+    markdown_file = "output/form13.md"
+    json_file = "output/form13.json"  # Updated path
+    
+    print(f"\n{'='*70}")
+    print("🚀 FORM FIELD EXTRACTION SYSTEM (WITH COORDINATES & SPAN)")
+    print(f"{'='*70}\n")
+    
+    print("📂 Loading files...")
+    
+    markdown_content = load_markdown(markdown_file)
+    if not markdown_content:
+        print("❌ Failed to load markdown file")
+        return None, None
+    print(f"   ✓ Markdown: {len(markdown_content):,} characters")
+    
+    docling_json = load_json(json_file)
+    if not docling_json:
+        print("❌ Failed to load JSON file")
+        return None, None
+    print(f"   ✓ JSON loaded successfully")
+    
+    print(f"\n{'='*70}")
+    print("📦 CHUNKING JSON")
+    print(f"{'='*70}")
+    json_chunks = chunk_json_by_size(docling_json, max_chars=8000)
+    total_chunks = len(json_chunks)
+    
+    print(f"\n{'='*70}")
+    print(f"🔄 PROCESSING {total_chunks} CHUNKS")
+    print(f"{'='*70}\n")
+    
+    all_extractions = []
+    successful = 0
+    failed = 0
+    
+    for i, json_chunk in enumerate(json_chunks, 1):
+        print(f"┌{'─'*68}┐")
+        print(f"│ 🔍 CHUNK {i}/{total_chunks}".ljust(69) + "│")
+        print(f"└{'─'*68}┘")
+        print(f"   Markdown: {len(markdown_content):,} chars")
+        print(f"   JSON chunk: {len(json_chunk):,} chars")
+        print(f"   ⏳ Calling API...")
+        
+        extraction = extract_fields_with_llm(markdown_content, json_chunk, i, total_chunks)
+        
+        if extraction:
+            all_extractions.append(extraction)
+            fields_count = len(extraction.get('form_fields', []))
+            print(f"   ✅ Extracted {fields_count} fields")
+            successful += 1
+        else:
+            print(f"   ⚠️ Failed to extract from this chunk")
+            failed += 1
+        
+        if i < total_chunks:
+            print(f"   ⏳ Waiting 1.5s...\n")
+            time.sleep(1.5)
+        else:
+            print()
+    
+    print(f"{'='*70}")
+    print("📊 MERGING RESULTS")
+    print(f"{'='*70}")
+    print(f"API calls: {total_chunks} | Success: {successful} | Failed: {failed}")
+    
+    llm_fields = merge_extractions(all_extractions)
+    
+    print(f"\n✓ Total unique fields: {len(llm_fields.get('form_fields', []))}")
+    print(f"✓ Total instructions: {len(llm_fields.get('instructions', []))}")
+    print(f"✓ Total special areas: {len(llm_fields.get('special_areas', []))}")
+    
+    output_file = 'llm_extracted_fields_with_coords.json'
+    with open(output_file, 'w', encoding='utf-8') as f:
+        json.dump(llm_fields, f, indent=2, ensure_ascii=False)
+    print(f"\n✓ Saved to '{output_file}'")
+    
+    print(f"\n{'='*70}")
+    print("📋 SAMPLE EXTRACTED FIELDS (WITH COORDINATES)")
+    print(f"{'='*70}\n")
+    
+    fields = llm_fields.get('form_fields', [])
+    for i, field in enumerate(fields[:10], 1):
+        print(f"{i}. {field.get('field_name', 'N/A')}")
+        print(f"   Key: {field.get('field_key', 'N/A')}")
+        print(f"   Type: {field.get('field_type', 'N/A')}")
+        
+        if field.get('coordinates'):
+            coords = field['coordinates']
+            print(f"   📍 Coordinates: [{coords[0]:.2f}, {coords[1]:.2f}, {coords[2]:.2f}, {coords[3]:.2f}]")
+        else:
+            print(f"   📍 Coordinates: Not found")
+        
+        if field.get('span'):
+            span = field['span']
+            print(f"   📏 Span: offset={span['offset']}, length={span['length']}")
+        else:
+            print(f"   📏 Span: Not found")
+        
+        if field.get('page_number'):
+            print(f"   📄 Page: {field['page_number']}")
+        print()
+    
+    if len(fields) > 10:
+        print(f"... and {len(fields) - 10} more fields\n")
+    
+    return llm_fields, docling_json
+
+
+if __name__ == "__main__":
+    try:
+        llm_fields, docling_json = main()
+        
+        print(f"{'='*70}")
+        if llm_fields:
+            print("✅ EXTRACTION COMPLETED SUCCESSFULLY")
+        else:
+            print("⚠️ EXTRACTION FAILED")
+        print(f"{'='*70}\n")
+    
+    except KeyboardInterrupt:
+        print("\n\n⚠️ Interrupted by user")
+    
+    except Exception as e:
+        print(f"\n{'='*70}")
+        print("❌ FATAL ERROR")
+        print(f"{'='*70}")
+        print(f"Error: {e}\n")
         import traceback
         traceback.print_exc()
