@@ -1,16 +1,26 @@
-# API Routes
-from fastapi import APIRouter
-from app.graphs.main_graph import build_graph
+from fastapi import APIRouter, UploadFile, File, Form
+import shutil
+import uuid
+from app.graph.main_graph import main_graph
 
 router = APIRouter()
-graph = build_graph()
 
-@router.post("/greet")
-def greet(user_input: str):
-    result = graph.invoke({
-        "user_input": user_input
+def save_file(file: UploadFile) -> str:
+    path = f"uploads/{uuid.uuid4()}_{file.filename}"
+    with open(path, "wb") as buffer:
+        shutil.copyfileobj(file.file, buffer)
+    return path
+
+@router.post("/document/intake")
+async def document_intake(
+    user_input: str = Form(...),
+    file: UploadFile = File(...)
+):
+    file_path = save_file(file)
+
+    result = main_graph.invoke({
+        "user_input": user_input,
+        "files": [file_path]
     })
 
-    return {
-        "response": result["response"]
-    }
+    return result
