@@ -1,4 +1,22 @@
+# -------- Secrets / Sensitive --------
 .env
-./llm_call
-./faiqa
+.env.*
+llm_call/
 faiqa/
+
+# -------- Python --------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# -------- Virtual Environment --------
+myenv/
+venv/
+.envvenv/
+
+# -------- OS / Editor --------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
