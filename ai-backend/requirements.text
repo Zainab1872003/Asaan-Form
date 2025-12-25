@@ -6,3 +6,7 @@ langchain-community
 langchain-openai
 python-dotenv
 pydantic
+python-multipart
+paddleocr
+pillow
+pymupdf
