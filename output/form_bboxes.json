@@ -1,0 +1,2378 @@
+[
+  {
+    "page": 1,
+    "label": "picture",
+    "text": "",
+    "bbox": [
+      154.9228973388672,
+      983.0830307006836,
+      455.4001159667969,
+      948.6386337280273
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Please read the instructions Fill in your own handwriting ( without cutting, overwriting and fluid) ",
+    "bbox": [
+      116.663,
+      944.307,
+      507.533,
+      931.673
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Examination",
+    "bbox": [
+      69.69,
+      348.69900000000007,
+      114.741,
+      343.31899999999996
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Intermediate",
+    "bbox": [
+      69.769,
+      331.28999999999996,
+      106.454,
+      327.24
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Year of",
+    "bbox": [
+      123.828,
+      353.062,
+      146.314,
+      348.8140000000001
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Passing",
+    "bbox": [
+      122.425,
+      345.69499999999994,
+      147.713,
+      341.447
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Examination",
+    "bbox": [
+      155.045,
+      352.539,
+      191.325,
+      348.29099999999994
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Semester",
+    "bbox": [
+      159.079,
+      345.172,
+      187.295,
+      340.924
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Board / University",
+    "bbox": [
+      379.683,
+      348.552,
+      431.716,
+      344.304
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Passed as",
+    "bbox": [
+      200.192,
+      352.182,
+      234.646,
+      347.93399999999997
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Full/by Parts",
+    "bbox": [
+      197.265,
+      344.81500000000005,
+      233.908,
+      340.567
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Roll No.",
+    "bbox": [
+      247.307,
+      348.024,
+      270.755,
+      343.77600000000007
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Marks",
+    "bbox": [
+      290.482,
+      348.404,
+      308.431,
+      344.155
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Division /",
+    "bbox": [
+      314.44,
+      352.549,
+      343.018,
+      348.30099999999993
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "GPA",
+    "bbox": [
+      321.097,
+      345.182,
+      334.532,
+      340.93399999999997
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "B.S. Semester",
+    "bbox": [
+      68.54,
+      317.2629999999999,
+      105.043,
+      313.21299999999997
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "I",
+    "bbox": [
+      105.041,
+      317.2629999999999,
+      106.849,
+      313.14
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "B.S. Semester",
+    "bbox": [
+      68.54,
+      302.29600000000005,
+      105.043,
+      298.24700000000007
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "II",
+    "bbox": [
+      105.041,
+      302.29600000000005,
+      108.657,
+      298.174
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "B.S. Semester",
+    "bbox": [
+      68.54,
+      287.32899999999995,
+      105.043,
+      283.28
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "III",
+    "bbox": [
+      105.041,
+      287.32899999999995,
+      110.464,
+      283.207
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "I certify that the applicant has fulfilled the requisite conditions laid down under the statutes/reg",
+    "bbox": [
+      66.132,
+      173.23299999999995,
+      468.872,
+      148.46299999999997
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Roll No:.............................",
+    "bbox": [
+      489.787,
+      878.781,
+      587.135,
+      873.383
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "(For Office Use)",
+    "bbox": [
+      531.128,
+      872.813,
+      564.069,
+      869.821
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "Name of Candidate (Block Letters)",
+    "bbox": [
+      66.485,
+      870.084,
+      147.987,
+      857.353
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "Registration No. (Punjab University)",
+    "bbox": [
+      66.829,
+      892.255,
+      136.215,
+      880.398
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "Father's Name (Block Letters)",
+    "bbox": [
+      66.485,
+      778.885,
+      130.905,
+      767.325
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "C.N.I.C. No.",
+    "bbox": [
+      66.779,
+      802.55,
+      121.26,
+      797.152
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "(Permanent Address must be written, otherwise form will be rejected.)",
+    "bbox": [
+      181.067,
+      213.54499999999996,
+      353.151,
+      209.95399999999995
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "I hereby declare that all the particulars are correct and that in case of any difficulty arising out",
+    "bbox": [
+      66.774,
+      272.029,
+      467.087,
+      255.39800000000002
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Signature of the Candidate :",
+    "bbox": [
+      66.687,
+      235.72000000000003,
+      178.421,
+      230.322
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Permanent Address :",
+    "bbox": [
+      314.553,
+      236.68399999999997,
+      395.128,
+      231.28600000000006
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "Fee  Information :",
+    "bbox": [
+      65.459,
+      409.283,
+      147.431,
+      403.885
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Amount ............................. Bank Challan No. ............................................ D",
+    "bbox": [
+      95.791,
+      396.943,
+      467.983,
+      391.5450000000001
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Branch Name  .......................................................................................",
+    "bbox": [
+      95.791,
+      381.03,
+      468.463,
+      375.63200000000006
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "Previous Examination Information :",
+    "bbox": [
+      65.907,
+      364.05899999999997,
+      209.808,
+      358.66100000000006
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Signature and Office Stamp",
+    "bbox": [
+      353.081,
+      113.83600000000001,
+      465.067,
+      108.43799999999999
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "C.N.I.C. No.",
+    "bbox": [
+      66.443,
+      118.73500000000001,
+      111.606,
+      113.33699999999999
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Permanent District",
+    "bbox": [
+      87.931,
+      630.22,
+      156.84,
+      624.822
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "Present Address (For correspondence)",
+    "bbox": [
+      65.98,
+      684.77,
+      139.101,
+      673.657
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "Father's C.N.I.C. No.",
+    "bbox": [
+      66.209,
+      709.072,
+      153.445,
+      703.674
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Date of Birth",
+    "bbox": [
+      341.183,
+      613.755,
+      390.083,
+      608.357
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "(As Per Matric Certificate)",
+    "bbox": [
+      401.153,
+      607.204,
+      454.423,
+      604.212
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Nationality",
+    "bbox": [
+      107.004,
+      614.639,
+      146.117,
+      609.241
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Religion",
+    "bbox": [
+      234.61,
+      614.639,
+      267.205,
+      609.241
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Medium :",
+    "bbox": [
+      488.438,
+      917.55,
+      527.948,
+      911.752
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "English/Urdu",
+    "bbox": [
+      536.52,
+      909.657,
+      576.588,
+      905.147
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "Category :",
+    "bbox": [
+      65.687,
+      916.273,
+      119.714,
+      910.475
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "(B.S.)",
+    "bbox": [
+      233.82,
+      908.791,
+      251.712,
+      904.281
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Examination :",
+    "bbox": [
+      160.06,
+      916.719,
+      214.582,
+      910.921
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Semester:",
+    "bbox": [
+      370.792,
+      916.719,
+      414.307,
+      910.921
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "20",
+    "bbox": [
+      446.224,
+      916.719,
+      456.232,
+      910.921
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Regular",
+    "bbox": [
+      125.136,
+      919.049,
+      153.144,
+      913.895
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "Name of Centre (City) (At which to appear)",
+    "bbox": [
+      66.416,
+      549.961,
+      157.211,
+      536.884
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "(This column must be filled)",
+    "bbox": [
+      284.43,
+      541.541,
+      341.325,
+      538.549
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "8. College Name ....................................................................................",
+    "bbox": [
+      66.779,
+      584.239,
+      468.346,
+      578.841
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "(With City)",
+    "bbox": [
+      88.225,
+      575.271,
+      116.167,
+      571.414
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "Mention Subject/s  in which to appear",
+    "bbox": [
+      66.1,
+      526.953,
+      230.682,
+      521.155
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Name of the Principal :",
+    "bbox": [
+      66.892,
+      138.43600000000004,
+      157.927,
+      132.63800000000003
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Paste Photograph (Passport Size)",
+    "bbox": [
+      505.798,
+      815.499,
+      569.53,
+      803.279
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "Without attestation",
+    "bbox": [
+      491.089,
+      784.184,
+      557.741,
+      779.386
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "Light blue background",
+    "bbox": [
+      489.365,
+      770.115,
+      574.615,
+      765.317
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Paste Photograph (Passport Size)",
+    "bbox": [
+      505.483,
+      288.405,
+      569.215,
+      276.18499999999995
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "Attested from front",
+    "bbox": [
+      490.775,
+      249.89099999999996,
+      556.599,
+      245.09299999999996
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "Light blue background",
+    "bbox": [
+      489.05,
+      239.42200000000003,
+      574.299,
+      234.62300000000005
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Thumb Impression",
+    "bbox": [
+      507.522,
+      658.114,
+      565.823,
+      653.915
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "(Name and Father's Name must be mentioned on the back side of photographs)",
+    "bbox": [
+      489.493,
+      742.971,
+      585.717,
+      719.943
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "(Name and Father's Name must be mentioned on the back side of photographs)",
+    "bbox": [
+      489.179,
+      215.19799999999998,
+      585.403,
+      192.16999999999996
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "i.",
+    "bbox": [
+      77.221,
+      512.506,
+      81.721,
+      506.708
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "ii.",
+    "bbox": [
+      77.221,
+      496.578,
+      83.719,
+      490.78
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "iii.",
+    "bbox": [
+      77.221,
+      480.3430000000001,
+      85.717,
+      474.5450000000001
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "iv.",
+    "bbox": [
+      77.221,
+      463.36699999999996,
+      85.555,
+      457.568
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "v.",
+    "bbox": [
+      273.731,
+      512.444,
+      280.065,
+      506.646
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "vi.",
+    "bbox": [
+      273.731,
+      496.593,
+      282.731,
+      490.7950000000001
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "vii.",
+    "bbox": [
+      273.731,
+      480.908,
+      284.729,
+      475.11
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "viii.",
+    "bbox": [
+      273.731,
+      463.4580000000001,
+      286.727,
+      457.6600000000001
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Year of last appearing in                Semester               20          Roll No",
+    "bbox": [
+      66.748,
+      429.472,
+      336.588,
+      423.674
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "(B.S.)",
+    "bbox": [
+      171.954,
+      421.82899999999995,
+      184.669,
+      418.615
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "For compartment/exemption candidate:",
+    "bbox": [
+      65.929,
+      446.89200000000005,
+      232.224,
+      441.09400000000005
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Combination:",
+    "bbox": [
+      274.274,
+      916.719,
+      327.293,
+      910.921
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Contact Number:",
+    "bbox": [
+      68.477,
+      196.76099999999997,
+      119.755,
+      192.269
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "(In case of Female Candidate, contact number of Father/Guardian can also be mentioned)",
+    "bbox": [
+      68.477,
+      186.04200000000003,
+      291.24,
+      182.19100000000003
+    ]
+  },
+  {
+    "page": 1,
+    "label": "section_header",
+    "text": "INSTRUCTIONS",
+    "bbox": [
+      275.2,
+      941.637,
+      365.2,
+      933.907
+    ]
+  },
+  {
+    "page": 1,
+    "label": "section_header",
+    "text": "Candidate is directed to read and comply with instructions hereunder before filling the Admission Fo",
+    "bbox": [
+      67.698,
+      918.724,
+      537.661,
+      912.604
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "The Admission Form found to be incomplete or containing incorrect entries will not be accepted/enter",
+    "bbox": [
+      67.697,
+      903.353,
+      589.614,
+      888.382
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "Each candidate (Male/Female) must enclose three latest identical passport size Photographs (with sky",
+    "bbox": [
+      67.693,
+      883.362,
+      566.349,
+      858.895
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "Admission form will be accepted according to the schedule notified by the University for each examin",
+    "bbox": [
+      67.687,
+      854.161,
+      577.183,
+      839.19
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "All the entries must be filled in with BLUE ballpoint. Don't use ink pen.",
+    "bbox": [
+      67.684,
+      834.456,
+      355.861,
+      828.98
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "Clearly fill the examination in which you are appearing.",
+    "bbox": [
+      67.683,
+      824.246,
+      297.141,
+      818.77
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "Fill your Name, Father's Name according to your Intermediate Certificate. In case of any discrepancy",
+    "bbox": [
+      67.681,
+      814.036,
+      566.0,
+      808.56
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "Fill the University Registration Number in the concerned column.",
+    "bbox": [
+      67.68,
+      803.826,
+      333.969,
+      798.35
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "Name of Centre (City) where you want to appear in the examination must be filled in the concerned co",
+    "bbox": [
+      67.679,
+      793.616,
+      493.199,
+      788.14
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "Fill the Name of Board from where you have passed the Intermediate examination with the passing year",
+    "bbox": [
+      67.677,
+      783.406,
+      572.14,
+      768.434
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "Deposit the required amount of fee in the Branches of Habib Bank registered with Punjab University. ",
+    "bbox": [
+      67.674,
+      763.701,
+      586.169,
+      748.729
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "The examination will be held on the date/s to be notified in the date-sheet.",
+    "bbox": [
+      67.672,
+      743.995,
+      369.457,
+      738.519
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "The candidates will be admitted to the Examination Hall on production of the Roll Number Slip. Candi",
+    "bbox": [
+      67.669,
+      733.785,
+      590.531,
+      709.318
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "The admission form will be entertained only if the attested photocopies of registration card issued ",
+    "bbox": [
+      67.661,
+      704.584,
+      582.473,
+      689.613
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "Unauthorized change of centre or subject is strictly prohibited. If any one changes his/her centre o",
+    "bbox": [
+      67.658,
+      684.879,
+      591.939,
+      660.412
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "The order in which the candidates are seated will be forwarded to the Examiner. As and when a candid",
+    "bbox": [
+      67.654,
+      655.677,
+      574.501,
+      631.21
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "No candidate without special permission of the officer-in-charge shall leave his/her seat or the exa",
+    "bbox": [
+      67.651,
+      626.476,
+      578.001,
+      602.009
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "Before beginning his/her answer each candidate shall write on the title page of his/her answer book ",
+    "bbox": [
+      67.646,
+      597.275,
+      587.69,
+      572.808
+    ]
+  },
+  {
+    "page": 1,
+    "label": "list_item",
+    "text": "No candidate shall give any mark of identification including his/her Roll No. Name, of School/colleg",
+    "bbox": [
+      67.64,
+      568.074,
+      571.105,
+      553.102
+    ]
+  },
+  {
+    "page": 1,
+    "label": "section_header",
+    "text": "19. Money orders, Postal orders, Bank Drafts & Cheques shall not be accepted",
+    "bbox": [
+      67.636,
+      535.646,
+      445.446,
+      529.204
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "NOTE: Before submitting the forms in the University the Principal must check all forms and note that",
+    "bbox": [
+      67.636,
+      514.437,
+      590.345,
+      478.47800000000007
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "I have read the above instructions carefully and shall abide by them.",
+    "bbox": [
+      132.083,
+      458.86400000000003,
+      524.891,
+      451.13300000000004
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "Date.....................................",
+    "bbox": [
+      90.886,
+      361.3430000000001,
+      213.449,
+      354.90100000000007
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": "(Signature of the Candidate)",
+    "bbox": [
+      419.317,
+      350.12200000000007,
+      551.101,
+      343.68000000000006
+    ]
+  },
+  {
+    "page": 1,
+    "label": "text",
+    "text": ".............................................",
+    "bbox": [
+      419.475,
+      361.34899999999993,
+      551.393,
+      354.9069999999999
+    ]
+  },
+  {
+    "page": 2,
+    "label": "picture",
+    "text": "",
+    "bbox": [
+      154.9228973388672,
+      983.0830307006836,
+      455.4001159667969,
+      948.6386337280273
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Please read the instructions Fill in your own handwriting ( without cutting, overwriting and fluid) ",
+    "bbox": [
+      116.663,
+      944.307,
+      507.533,
+      931.673
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Examination",
+    "bbox": [
+      69.69,
+      348.69900000000007,
+      114.741,
+      343.31899999999996
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Intermediate",
+    "bbox": [
+      69.769,
+      331.28999999999996,
+      106.454,
+      327.24
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Year of",
+    "bbox": [
+      123.828,
+      353.062,
+      146.314,
+      348.8140000000001
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Passing",
+    "bbox": [
+      122.425,
+      345.69499999999994,
+      147.713,
+      341.447
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Examination",
+    "bbox": [
+      155.045,
+      352.539,
+      191.325,
+      348.29099999999994
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Semester",
+    "bbox": [
+      159.079,
+      345.172,
+      187.295,
+      340.924
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Board / University",
+    "bbox": [
+      379.683,
+      348.552,
+      431.716,
+      344.304
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Passed as",
+    "bbox": [
+      200.192,
+      352.182,
+      234.646,
+      347.93399999999997
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Full/by Parts",
+    "bbox": [
+      197.265,
+      344.81500000000005,
+      233.908,
+      340.567
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Roll No.",
+    "bbox": [
+      247.307,
+      348.024,
+      270.755,
+      343.77600000000007
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Marks",
+    "bbox": [
+      290.482,
+      348.404,
+      308.431,
+      344.155
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Division /",
+    "bbox": [
+      314.44,
+      352.549,
+      343.018,
+      348.30099999999993
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "GPA",
+    "bbox": [
+      321.097,
+      345.182,
+      334.532,
+      340.93399999999997
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "B.S. Semester",
+    "bbox": [
+      68.54,
+      317.2629999999999,
+      105.043,
+      313.21299999999997
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "I",
+    "bbox": [
+      105.041,
+      317.2629999999999,
+      106.849,
+      313.14
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "B.S. Semester",
+    "bbox": [
+      68.54,
+      302.29600000000005,
+      105.043,
+      298.24700000000007
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "II",
+    "bbox": [
+      105.041,
+      302.29600000000005,
+      108.657,
+      298.174
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "B.S. Semester",
+    "bbox": [
+      68.54,
+      287.32899999999995,
+      105.043,
+      283.28
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "III",
+    "bbox": [
+      105.041,
+      287.32899999999995,
+      110.464,
+      283.207
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "I certify that the applicant has fulfilled the requisite conditions laid down under the statutes/reg",
+    "bbox": [
+      66.132,
+      173.23299999999995,
+      468.872,
+      148.46299999999997
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Roll No:.............................",
+    "bbox": [
+      489.787,
+      878.781,
+      587.135,
+      873.383
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "(For Office Use)",
+    "bbox": [
+      531.128,
+      872.813,
+      564.069,
+      869.821
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "Name of Candidate (Block Letters)",
+    "bbox": [
+      66.485,
+      870.084,
+      147.987,
+      857.353
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "Registration No. (Punjab University)",
+    "bbox": [
+      66.829,
+      892.255,
+      136.215,
+      880.398
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "Father's Name (Block Letters)",
+    "bbox": [
+      66.485,
+      778.885,
+      130.905,
+      767.325
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "C.N.I.C. No.",
+    "bbox": [
+      66.779,
+      802.55,
+      121.26,
+      797.152
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "(Permanent Address must be written, otherwise form will be rejected.)",
+    "bbox": [
+      181.067,
+      213.54499999999996,
+      353.151,
+      209.95399999999995
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "I hereby declare that all the particulars are correct and that in case of any difficulty arising out",
+    "bbox": [
+      66.774,
+      272.029,
+      467.087,
+      255.39800000000002
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Signature of the Candidate :",
+    "bbox": [
+      66.687,
+      235.72000000000003,
+      178.421,
+      230.322
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Permanent Address :",
+    "bbox": [
+      314.553,
+      236.68399999999997,
+      395.128,
+      231.28600000000006
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "Fee  Information :",
+    "bbox": [
+      65.459,
+      409.283,
+      147.431,
+      403.885
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Amount ............................. Bank Challan No. ............................................ D",
+    "bbox": [
+      95.791,
+      396.943,
+      467.983,
+      391.5450000000001
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Branch Name  .......................................................................................",
+    "bbox": [
+      95.791,
+      381.03,
+      468.463,
+      375.63200000000006
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "Previous Examination Information :",
+    "bbox": [
+      65.907,
+      364.05899999999997,
+      209.808,
+      358.66100000000006
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Signature and Office Stamp",
+    "bbox": [
+      353.081,
+      113.83600000000001,
+      465.067,
+      108.43799999999999
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "C.N.I.C. No.",
+    "bbox": [
+      66.443,
+      118.73500000000001,
+      111.606,
+      113.33699999999999
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Permanent District",
+    "bbox": [
+      87.931,
+      630.22,
+      156.84,
+      624.822
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "Present Address (For correspondence)",
+    "bbox": [
+      65.98,
+      684.77,
+      139.101,
+      673.657
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "Father's C.N.I.C. No.",
+    "bbox": [
+      66.209,
+      709.072,
+      153.445,
+      703.674
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Date of Birth",
+    "bbox": [
+      341.183,
+      613.755,
+      390.083,
+      608.357
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "(As Per Matric Certificate)",
+    "bbox": [
+      401.153,
+      607.204,
+      454.423,
+      604.212
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Nationality",
+    "bbox": [
+      107.004,
+      614.639,
+      146.117,
+      609.241
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Religion",
+    "bbox": [
+      234.61,
+      614.639,
+      267.205,
+      609.241
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Medium :",
+    "bbox": [
+      488.438,
+      917.55,
+      527.948,
+      911.752
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "English/Urdu",
+    "bbox": [
+      536.52,
+      909.657,
+      576.588,
+      905.147
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "Category :",
+    "bbox": [
+      65.687,
+      916.273,
+      119.714,
+      910.475
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "(B.S.)",
+    "bbox": [
+      233.82,
+      908.791,
+      251.712,
+      904.281
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Examination :",
+    "bbox": [
+      160.06,
+      916.719,
+      214.582,
+      910.921
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Semester:",
+    "bbox": [
+      370.792,
+      916.719,
+      414.307,
+      910.921
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "20",
+    "bbox": [
+      446.224,
+      916.719,
+      456.232,
+      910.921
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Regular",
+    "bbox": [
+      125.136,
+      919.049,
+      153.144,
+      913.895
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "Name of Centre (City) (At which to appear)",
+    "bbox": [
+      66.416,
+      549.961,
+      157.211,
+      536.884
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "(This column must be filled)",
+    "bbox": [
+      284.43,
+      541.541,
+      341.325,
+      538.549
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "8. College Name ....................................................................................",
+    "bbox": [
+      66.779,
+      584.239,
+      468.346,
+      578.841
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "(With City)",
+    "bbox": [
+      88.225,
+      575.271,
+      116.167,
+      571.414
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "Mention Subject/s  in which to appear",
+    "bbox": [
+      66.1,
+      526.953,
+      230.682,
+      521.155
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Name of the Principal :",
+    "bbox": [
+      66.892,
+      138.43600000000004,
+      157.927,
+      132.63800000000003
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Paste Photograph (Passport Size)",
+    "bbox": [
+      505.798,
+      815.499,
+      569.53,
+      803.279
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "Without attestation",
+    "bbox": [
+      491.089,
+      784.184,
+      557.741,
+      779.386
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "Light blue background",
+    "bbox": [
+      489.365,
+      770.115,
+      574.615,
+      765.317
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Paste Photograph (Passport Size)",
+    "bbox": [
+      505.483,
+      288.405,
+      569.215,
+      276.18499999999995
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "Attested from front",
+    "bbox": [
+      490.775,
+      249.89099999999996,
+      556.599,
+      245.09299999999996
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "Light blue background",
+    "bbox": [
+      489.05,
+      239.42200000000003,
+      574.299,
+      234.62300000000005
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Thumb Impression",
+    "bbox": [
+      507.522,
+      658.114,
+      565.823,
+      653.915
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "(Name and Father's Name must be mentioned on the back side of photographs)",
+    "bbox": [
+      489.493,
+      742.971,
+      585.717,
+      719.943
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "(Name and Father's Name must be mentioned on the back side of photographs)",
+    "bbox": [
+      489.179,
+      215.19799999999998,
+      585.403,
+      192.16999999999996
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "i.",
+    "bbox": [
+      77.221,
+      512.506,
+      81.721,
+      506.708
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "ii.",
+    "bbox": [
+      77.221,
+      496.578,
+      83.719,
+      490.78
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "iii.",
+    "bbox": [
+      77.221,
+      480.3430000000001,
+      85.717,
+      474.5450000000001
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "iv.",
+    "bbox": [
+      77.221,
+      463.36699999999996,
+      85.555,
+      457.568
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "v.",
+    "bbox": [
+      273.731,
+      512.444,
+      280.065,
+      506.646
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "vi.",
+    "bbox": [
+      273.731,
+      496.593,
+      282.731,
+      490.7950000000001
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "vii.",
+    "bbox": [
+      273.731,
+      480.908,
+      284.729,
+      475.11
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "viii.",
+    "bbox": [
+      273.731,
+      463.4580000000001,
+      286.727,
+      457.6600000000001
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Year of last appearing in                Semester               20          Roll No",
+    "bbox": [
+      66.748,
+      429.472,
+      336.588,
+      423.674
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "(B.S.)",
+    "bbox": [
+      171.954,
+      421.82899999999995,
+      184.669,
+      418.615
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "For compartment/exemption candidate:",
+    "bbox": [
+      65.929,
+      446.89200000000005,
+      232.224,
+      441.09400000000005
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Combination:",
+    "bbox": [
+      274.274,
+      916.719,
+      327.293,
+      910.921
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Contact Number:",
+    "bbox": [
+      68.477,
+      196.76099999999997,
+      119.755,
+      192.269
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "(In case of Female Candidate, contact number of Father/Guardian can also be mentioned)",
+    "bbox": [
+      68.477,
+      186.04200000000003,
+      291.24,
+      182.19100000000003
+    ]
+  },
+  {
+    "page": 2,
+    "label": "section_header",
+    "text": "INSTRUCTIONS",
+    "bbox": [
+      275.2,
+      941.637,
+      365.2,
+      933.907
+    ]
+  },
+  {
+    "page": 2,
+    "label": "section_header",
+    "text": "Candidate is directed to read and comply with instructions hereunder before filling the Admission Fo",
+    "bbox": [
+      67.698,
+      918.724,
+      537.661,
+      912.604
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "The Admission Form found to be incomplete or containing incorrect entries will not be accepted/enter",
+    "bbox": [
+      67.697,
+      903.353,
+      589.614,
+      888.382
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "Each candidate (Male/Female) must enclose three latest identical passport size Photographs (with sky",
+    "bbox": [
+      67.693,
+      883.362,
+      566.349,
+      858.895
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "Admission form will be accepted according to the schedule notified by the University for each examin",
+    "bbox": [
+      67.687,
+      854.161,
+      577.183,
+      839.19
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "All the entries must be filled in with BLUE ballpoint. Don't use ink pen.",
+    "bbox": [
+      67.684,
+      834.456,
+      355.861,
+      828.98
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "Clearly fill the examination in which you are appearing.",
+    "bbox": [
+      67.683,
+      824.246,
+      297.141,
+      818.77
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "Fill your Name, Father's Name according to your Intermediate Certificate. In case of any discrepancy",
+    "bbox": [
+      67.681,
+      814.036,
+      566.0,
+      808.56
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "Fill the University Registration Number in the concerned column.",
+    "bbox": [
+      67.68,
+      803.826,
+      333.969,
+      798.35
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "Name of Centre (City) where you want to appear in the examination must be filled in the concerned co",
+    "bbox": [
+      67.679,
+      793.616,
+      493.199,
+      788.14
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "Fill the Name of Board from where you have passed the Intermediate examination with the passing year",
+    "bbox": [
+      67.677,
+      783.406,
+      572.14,
+      768.434
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "Deposit the required amount of fee in the Branches of Habib Bank registered with Punjab University. ",
+    "bbox": [
+      67.674,
+      763.701,
+      586.169,
+      748.729
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "The examination will be held on the date/s to be notified in the date-sheet.",
+    "bbox": [
+      67.672,
+      743.995,
+      369.457,
+      738.519
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "The candidates will be admitted to the Examination Hall on production of the Roll Number Slip. Candi",
+    "bbox": [
+      67.669,
+      733.785,
+      590.531,
+      709.318
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "The admission form will be entertained only if the attested photocopies of registration card issued ",
+    "bbox": [
+      67.661,
+      704.584,
+      582.473,
+      689.613
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "Unauthorized change of centre or subject is strictly prohibited. If any one changes his/her centre o",
+    "bbox": [
+      67.658,
+      684.879,
+      591.939,
+      660.412
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "The order in which the candidates are seated will be forwarded to the Examiner. As and when a candid",
+    "bbox": [
+      67.654,
+      655.677,
+      574.501,
+      631.21
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "No candidate without special permission of the officer-in-charge shall leave his/her seat or the exa",
+    "bbox": [
+      67.651,
+      626.476,
+      578.001,
+      602.009
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "Before beginning his/her answer each candidate shall write on the title page of his/her answer book ",
+    "bbox": [
+      67.646,
+      597.275,
+      587.69,
+      572.808
+    ]
+  },
+  {
+    "page": 2,
+    "label": "list_item",
+    "text": "No candidate shall give any mark of identification including his/her Roll No. Name, of School/colleg",
+    "bbox": [
+      67.64,
+      568.074,
+      571.105,
+      553.102
+    ]
+  },
+  {
+    "page": 2,
+    "label": "section_header",
+    "text": "19. Money orders, Postal orders, Bank Drafts & Cheques shall not be accepted",
+    "bbox": [
+      67.636,
+      535.646,
+      445.446,
+      529.204
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "NOTE: Before submitting the forms in the University the Principal must check all forms and note that",
+    "bbox": [
+      67.636,
+      514.437,
+      590.345,
+      478.47800000000007
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "I have read the above instructions carefully and shall abide by them.",
+    "bbox": [
+      132.083,
+      458.86400000000003,
+      524.891,
+      451.13300000000004
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "Date.....................................",
+    "bbox": [
+      90.886,
+      361.3430000000001,
+      213.449,
+      354.90100000000007
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": "(Signature of the Candidate)",
+    "bbox": [
+      419.317,
+      350.12200000000007,
+      551.101,
+      343.68000000000006
+    ]
+  },
+  {
+    "page": 2,
+    "label": "text",
+    "text": ".............................................",
+    "bbox": [
+      419.475,
+      361.34899999999993,
+      551.393,
+      354.9069999999999
+    ]
+  }
+]

@@ -1,0 +1,75 @@
+<!-- image -->
+
+## ADMISSION FORM
+
+PHOTO
+
+Name of School where admission is required:
+
+Class in which admission is required:
+
+Registration No:
+
+Date of Admission:
+
+Student's Name:
+
+Gender: Male
+
+- [ ] Female
+
+Date of Birth:
+
+Religion:
+
+B-Form/Smart Card No:
+
+Father's/ Guardian's Name:
+
+Father's / Guardian'sCNIC No:
+
+Father's / Guardian'sOccupation:
+
+Mother's Name:
+
+Mother's Education:
+
+Family Monthly Income:
+
+Contact No:
+
+Complete Home Address:
+
+Postal Address:
+
+Type of Major Disability:
+
+Any Other Disability (Additional):
+
+Disability Certificate No:
+
+Emergency Contact No:
+
+Details of Previous School (if attended):
+
+(Cause of leaving school)
+
+Signature of Parent/Guardian:
+
+## FOR OFFICEUSE
+
+Admission No.
+
+Date of Admission:
+
+Signature of Admission Officer
+
+Signature of Head of School
+
+## Note:
+
+Bring following documents along-with Admission Form at the time of Visit for Admission:
+
+1. Copy of Father / Guardian CNIC
+2. 04 Fresh Passport Size Photographs of Child.
+3. 3.Copy of B. Form or Birth Certificate of Child.
