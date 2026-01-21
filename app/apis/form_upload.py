@@ -229,9 +229,8 @@ async def process_existing_form(user_id: str, form_id: str):
             output_dir
         )
         
-        # Extract fields with LLM
+        # Extract fields with LLM (JSON only, no markdown)
         llm_result = await form_processing_service.extract_form_fields(
-            docling_result["markdown"],
             docling_result["json"],
             output_dir
         )

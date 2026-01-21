@@ -8,7 +8,8 @@ from app.utils.llm import get_llm
 class FormExtractionService:
     """
     Service to extract form fields using LLM
-    Takes markdown + JSON and identifies form fields with coordinates
+    Takes JSON only (no markdown) and identifies form fields with coordinates
+    Uses larger chunk sizes since markdown is no longer included
     """
     
     def __init__(self):
@@ -18,14 +19,13 @@ class FormExtractionService:
     
     async def extract_fields(
         self, 
-        markdown: str, 
         docling_json: Dict
     ) -> Dict:
         """
-        Main method: Extract form fields from markdown and JSON
+        Main method: Extract form fields from JSON only (no markdown)
+        Filters JSON to only include useful parts (texts and tables with coordinates)
         
         Args:
-            markdown: Markdown content from Docling
             docling_json: JSON with bounding boxes from Docling
             
         Returns:
@@ -34,10 +34,15 @@ class FormExtractionService:
                 - instructions: List of form instructions
                 - special_areas: List of special areas (signature, photo, etc.)
         """
-        print(f"🤖 Starting field extraction")
+        print(f"🤖 Starting field extraction (JSON only)")
         
-        # Split JSON into chunks (LLM has token limits)
-        chunks = self._chunk_json(docling_json)
+        # Filter JSON to only include useful parts (texts and tables)
+        filtered_json = self._filter_useful_json(docling_json)
+        print(f"✓ Filtered JSON: extracted only texts and tables with coordinates")
+        
+        # Split filtered JSON into chunks (LLM has token limits)
+        # Increased chunk size since we're not sending markdown anymore
+        chunks = self._chunk_json(filtered_json)
         print(f"✓ Split into {len(chunks)} chunks")
         
         # Process each chunk
@@ -46,7 +51,6 @@ class FormExtractionService:
             print(f"  Processing chunk {i}/{len(chunks)}...")
             
             extraction = await self._extract_from_chunk(
-                markdown, 
                 chunk, 
                 i, 
                 len(chunks)
@@ -68,7 +72,192 @@ class FormExtractionService:
         
         return merged
     
-    def _chunk_json(self, json_data: Dict, max_size: int = 8000) -> List[str]:
+    def _filter_useful_json(self, json_data: Dict) -> Dict:
+        """
+        Filter Docling JSON to only include useful parts for form extraction.
+        Extracts only texts and tables with their essential data (content, bbox, page_no).
+        Removes metadata, references, and structural information that's not needed.
+        
+        Args:
+            json_data: Full Docling JSON output
+            
+        Returns:
+            Filtered JSON with only texts and tables containing:
+            - text content
+            - bbox (bounding box coordinates)
+            - page_number
+            - label (if available)
+            - charspan (if available)
+        """
+        filtered = {
+            "texts": [],
+            "tables": [],
+            "metadata": {
+                "total_pages": json_data.get("metadata", {}).get("total_pages", 0) if isinstance(json_data.get("metadata"), dict) else 0
+            }
+        }
+        
+        # Handle different JSON structures from Docling
+        # Combined format (from _combine_jsons)
+        if "all_texts" in json_data:
+            texts = json_data["all_texts"]
+        # Standard Docling format
+        elif "texts" in json_data:
+            texts = json_data["texts"]
+        # Docling main-text format
+        elif "main-text" in json_data:
+            texts = json_data["main-text"]
+        # Handle pages structure (extract texts from all pages)
+        elif "pages" in json_data:
+            texts = []
+            for page in json_data["pages"]:
+                if isinstance(page, dict):
+                    if "texts" in page:
+                        texts.extend(page["texts"])
+                    elif "main-text" in page:
+                        texts.extend(page["main-text"])
+        else:
+            texts = []
+        
+        # Filter texts - only keep essential fields
+        for text_item in texts:
+            if not isinstance(text_item, dict):
+                continue
+            
+            # Extract useful fields
+            filtered_text = {}
+            
+            # Get text content (could be in different fields based on Docling structure)
+            text_content = None
+            if "text" in text_item:
+                text_content = text_item["text"]
+            elif "content" in text_item:
+                text_content = text_item["content"]
+            elif "value" in text_item:
+                text_content = text_item["value"]
+            elif "text_content" in text_item:
+                text_content = text_item["text_content"]
+            
+            # Skip if no text content found
+            if not text_content or not str(text_content).strip():
+                continue
+            
+            filtered_text["text"] = str(text_content).strip()
+            
+            # Get bounding box from prov array
+            prov = text_item.get("prov", [])
+            if prov and isinstance(prov, list) and len(prov) > 0:
+                prov_item = prov[0] if isinstance(prov[0], dict) else {}
+                bbox = prov_item.get("bbox", {})
+                
+                # Handle bbox as dict (l, t, r, b format)
+                if bbox and isinstance(bbox, dict):
+                    filtered_text["bbox"] = {
+                        "l": bbox.get("l"),
+                        "t": bbox.get("t"),
+                        "r": bbox.get("r"),
+                        "b": bbox.get("b")
+                    }
+                # Handle bbox as array [l, t, r, b]
+                elif bbox and isinstance(bbox, list) and len(bbox) >= 4:
+                    filtered_text["bbox"] = {
+                        "l": bbox[0],
+                        "t": bbox[1],
+                        "r": bbox[2],
+                        "b": bbox[3]
+                    }
+                
+                # Get page number
+                page_no = prov_item.get("page_no") or prov_item.get("page")
+                if page_no is not None:
+                    filtered_text["page_number"] = int(page_no)
+            
+            # Get page number from _page if available (from combined format)
+            if "_page" in text_item:
+                filtered_text["page_number"] = int(text_item["_page"])
+            
+            # Get label if available (useful for understanding element type)
+            if "label" in text_item:
+                filtered_text["label"] = text_item["label"]
+            elif "name" in text_item:
+                filtered_text["label"] = text_item["name"]
+            
+            # Get charspan if available (for text spans)
+            if "charspan" in text_item:
+                filtered_text["charspan"] = text_item["charspan"]
+            elif "span" in text_item:
+                filtered_text["charspan"] = text_item["span"]
+            
+            # Only add if we have text content and bbox
+            if filtered_text.get("text") and filtered_text.get("bbox"):
+                filtered["texts"].append(filtered_text)
+        
+        # Handle tables if present
+        if "tables" in json_data:
+            tables = json_data["tables"]
+            for table_item in tables:
+                if not isinstance(table_item, dict):
+                    continue
+                
+                filtered_table = {}
+                
+                # Get table content/structure (could be nested)
+                table_content = None
+                if "table" in table_item:
+                    table_content = table_item["table"]
+                elif "content" in table_item:
+                    table_content = table_item["content"]
+                elif "data" in table_item:
+                    table_content = table_item["data"]
+                elif "cells" in table_item:
+                    # Extract table structure from cells
+                    cells = table_item.get("cells", [])
+                    if cells:
+                        table_content = {"cells": cells}
+                
+                if table_content:
+                    filtered_table["table"] = table_content
+                
+                # Get bounding box
+                prov = table_item.get("prov", [])
+                if prov and isinstance(prov, list) and len(prov) > 0:
+                    prov_item = prov[0] if isinstance(prov[0], dict) else {}
+                    bbox = prov_item.get("bbox", {})
+                    
+                    # Handle bbox as dict
+                    if bbox and isinstance(bbox, dict):
+                        filtered_table["bbox"] = {
+                            "l": bbox.get("l"),
+                            "t": bbox.get("t"),
+                            "r": bbox.get("r"),
+                            "b": bbox.get("b")
+                        }
+                    # Handle bbox as array
+                    elif bbox and isinstance(bbox, list) and len(bbox) >= 4:
+                        filtered_table["bbox"] = {
+                            "l": bbox[0],
+                            "t": bbox[1],
+                            "r": bbox[2],
+                            "b": bbox[3]
+                        }
+                    
+                    page_no = prov_item.get("page_no") or prov_item.get("page")
+                    if page_no is not None:
+                        filtered_table["page_number"] = int(page_no)
+                
+                # Get label if available
+                if "label" in table_item:
+                    filtered_table["label"] = table_item["label"]
+                elif "name" in table_item:
+                    filtered_table["label"] = table_item["name"]
+                
+                # Only add if we have table content and bbox
+                if filtered_table.get("table") and filtered_table.get("bbox"):
+                    filtered["tables"].append(filtered_table)
+        
+        return filtered
+    
+    def _chunk_json(self, json_data: Dict, max_size: int = 20000) -> List[str]:
         """
         Split large JSON into smaller chunks
         
@@ -147,16 +336,14 @@ class FormExtractionService:
     
     async def _extract_from_chunk(
         self,
-        markdown: str,
         json_chunk: str,
         chunk_num: int,
         total_chunks: int
     ) -> Optional[Dict]:
         """
-        Extract fields from a single chunk using LLM
+        Extract fields from a single chunk using LLM (JSON only, no markdown)
         
         Args:
-            markdown: Full markdown for context
             json_chunk: This specific JSON chunk
             chunk_num: Current chunk number
             total_chunks: Total number of chunks
@@ -164,7 +351,7 @@ class FormExtractionService:
         Returns:
             Extracted data or None if failed
         """
-        prompt = self._build_prompt(markdown, json_chunk, chunk_num, total_chunks)
+        prompt = self._build_prompt(json_chunk, chunk_num, total_chunks)
         
         try:
             # Use LangChain's ChatOpenAI
@@ -211,23 +398,16 @@ class FormExtractionService:
     
     def _build_prompt(
         self,
-        markdown: str,
         json_chunk: str,
         chunk_num: int,
         total_chunks: int
     ) -> str:
-        """Build the extraction prompt"""
-        
-        # Truncate markdown for context (to save tokens)
-        markdown_preview = markdown[:2000] + "..." if len(markdown) > 2000 else markdown
+        """Build the extraction prompt (JSON only, no markdown)"""
         
         return f"""
 You are analyzing a form to extract fillable fields.
 
 **CHUNK {chunk_num} OF {total_chunks}**
-
-**FORM MARKDOWN (for context):**
-{markdown_preview}
 
 **JSON METADATA CHUNK:**
 {json_chunk}

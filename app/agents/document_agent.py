@@ -2,8 +2,9 @@ from app.schemas.state import AgentState
 from app.services.ocr_service import extract_text_from_image
 from app.utils.llm import get_llm
 import json
+import logging
 
-llm = get_llm()
+logger = logging.getLogger(__name__)
 
 def document_agent(state: AgentState) -> AgentState:
     files = state.get("files", [])
@@ -38,7 +39,31 @@ OCR Text:
 Return ONLY valid JSON.
 """
 
-    response = llm.invoke(prompt).content
+    try:
+        llm = get_llm()
+        response = llm.invoke(prompt).content
+    except ValueError as e:
+        # API key not configured
+        logger.error(f"LLM configuration error: {e}")
+        return {
+            **state,
+            "raw_text": raw_text,
+            "extracted_json": {
+                "error": "LLM not configured. Please set OPENROUTER_API_KEY in .env file.",
+                "raw_text": raw_text
+            }
+        }
+    except Exception as e:
+        # Other LLM errors (authentication, network, etc.)
+        logger.error(f"LLM invocation error: {e}")
+        return {
+            **state,
+            "raw_text": raw_text,
+            "extracted_json": {
+                "error": f"LLM error: {str(e)}",
+                "raw_text": raw_text
+            }
+        }
 
     try:
         structured_json = json.loads(response)

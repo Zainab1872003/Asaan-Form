@@ -95,8 +95,8 @@ class Settings(BaseSettings):
     # ========================================================================
     # FORM PROCESSING SETTINGS
     # ========================================================================
-    # JSON chunking for LLM
-    MAX_JSON_CHUNK_SIZE: int = 8000
+    # JSON chunking for LLM (increased since we're not sending markdown anymore)
+    MAX_JSON_CHUNK_SIZE: int = 20000
     
     # Docling settings
     DOCLING_DO_TABLE_STRUCTURE: bool = True

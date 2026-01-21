@@ -375,26 +375,23 @@ class FormProcessingService:
     
     async def extract_form_fields(
         self, 
-        markdown: str, 
         docling_json: Dict,
         output_dir: Path
     ) -> Dict:
         """
-        Extract form fields using LLM with chunking support
+        Extract form fields using LLM with chunking support (JSON only, no markdown)
         
         Args:
-            markdown: Combined markdown content
             docling_json: Combined JSON with bounding boxes
             output_dir: Directory to save outputs
             
         Returns:
             Extracted fields with coordinates and types
         """
-        print(f"\n🤖 Extracting form fields with LLM...")
+        print(f"\n🤖 Extracting form fields with LLM (JSON only)...")
         
         # Use the LLM service which handles chunking
         extracted_fields = await self.llm_service.extract_fields(
-            markdown, 
             docling_json
         )
         
@@ -487,10 +484,9 @@ class FormProcessingService:
                 "json_path": docling_result["paths"]["json"]
             }
             
-            # Step 4: Extract fields with LLM
+            # Step 4: Extract fields with LLM (JSON only, no markdown)
             print("\n🤖 Step 3: Extracting form fields...")
             llm_result = await self.extract_form_fields(
-                docling_result["markdown"],
                 docling_result["json"],
                 output_dir
             )

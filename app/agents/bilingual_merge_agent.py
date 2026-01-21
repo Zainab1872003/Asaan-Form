@@ -1,8 +1,9 @@
 import json
 from app.schemas.state import AgentState
 from app.utils.llm import get_llm
+import logging
 
-llm = get_llm()
+logger = logging.getLogger(__name__)
 
 def bilingual_merge_agent(state: AgentState) -> AgentState:
     english = state.get("english_text", "")
@@ -29,12 +30,30 @@ Urdu OCR:
 Return ONLY valid JSON.
 """
 
-    response = llm.invoke(prompt).content
-
     try:
-        merged = json.loads(response)
-    except Exception:
-        merged = {"error": "Invalid JSON", "raw": response}
+        llm = get_llm()
+        response = llm.invoke(prompt).content
+    except ValueError as e:
+        # API key not configured
+        logger.error(f"LLM configuration error: {e}")
+        merged = {
+            "error": "LLM not configured. Please set OPENROUTER_API_KEY in .env file.",
+            "english_text": english,
+            "urdu_text": urdu
+        }
+    except Exception as e:
+        # Other LLM errors (authentication, network, etc.)
+        logger.error(f"LLM invocation error: {e}")
+        merged = {
+            "error": f"LLM error: {str(e)}",
+            "english_text": english,
+            "urdu_text": urdu
+        }
+    else:
+        try:
+            merged = json.loads(response)
+        except Exception:
+            merged = {"error": "Invalid JSON", "raw": response}
 
     return {
         **state,
