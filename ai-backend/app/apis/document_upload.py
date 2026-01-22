@@ -11,7 +11,6 @@ from fastapi.responses import JSONResponse
 from typing import List, Optional
 from pathlib import Path
 import json
-import os
 
 from app.config import settings
 from app.services.document_processing_service import document_processing_service

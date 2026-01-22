@@ -162,7 +162,7 @@ class DocumentProcessingService:
                     result["combined_text"] = markdown_text
                     return result
                     
-                except Exception as docling_error:
+                except Exception:
                     print("  ⚠️ Docling failed ({str(docling_error)[:100]}), falling back to image-based OCR...")
                     # Fall through to image-based OCR
             
