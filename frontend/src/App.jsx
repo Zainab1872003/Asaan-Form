@@ -14,4 +14,6 @@ const App = () => (
   </QueryClientProvider>
 );
 
+// just added a comment to check the code quality feature in codacy
+
 export default App;
