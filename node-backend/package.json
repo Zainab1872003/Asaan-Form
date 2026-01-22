@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage",
+    "test:ci": "jest --coverage --coverageReporters=text-summary --coverageReporters=lcov --coverageDirectory=coverage/backend"
   },
   "keywords": [],
   "author": "Asaan-form Team (Saneha, Zainab, Faiqa, Aqsa)",
@@ -21,5 +22,9 @@
     "mongoose": "^8.16.1",
     "nodemailer": "^7.0.5",
     "validator": "^13.15.15"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "supertest": "^6.0.0"
   }
 }

@@ -10,7 +10,6 @@ const initialState = {
     isLoading: true, // For initial app loading
     // Get reset email from localStorage if exists
     resetEmail: localStorage.getItem('asaan_reset_email') || null,
-    resetEmail: null, // Track email for password reset flow
     resetStep: null, // 'request', 'verify', 'reset' for tracking reset progress
     resetToken: localStorage.getItem('asaan_reset_token') || null,
   }; 
