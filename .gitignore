@@ -1,0 +1,18 @@
+# Virtual environments
+asaan-env/
+venv/
+.env
+ai-backend_env/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Pip temp folders
+pip-*
+uploads/
+uploads1/
+
+# OS / Editor junk
+.vscode/
+.DS_Store
