@@ -1,34 +1,48 @@
 const mongoose = require("mongoose");
 const multer = require("multer");
-const path = require("path");
+require("dotenv").config();
 
 const dbURL = process.env.dbURL;
 
 const connectDB = async () => {
     try {
         const conn = await mongoose.connect(dbURL);
-        console.log(`Connected to MongoDB: ${conn.connection.host}`);
+        console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
         return conn;
     } catch (error) {
-        console.error(`Error connecting to MongoDB: ${error.message}`);
+        console.error(`❌ MongoDB Connection Error: ${error.message}`);
         process.exit(1);
     }
 };
 
-// Create storage engine for local disk
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, 'uploads/');
-    },
-    filename: (req, file, cb) => {
-        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1000000000);
-        cb(null, uniqueSuffix + path.extname(file.originalname));
-    }
-});
+// ==================== GRIDFS SETUP ====================
+let bucket;
+
+const initGridFS = () => {
+    if (bucket) return;
+    const db = mongoose.connection.db;
+    bucket = new mongoose.mongo.GridFSBucket(db, {
+        bucketName: "uploads"   // This is the collection name in MongoDB
+    });
+    console.log("✅ GridFS Bucket initialized successfully");
+};
+
+const getGridFSBucket = () => {
+    if (!bucket) throw new Error("GridFS not initialized. Call initGridFS() first.");
+    return bucket;
+};
+
+// Memory storage (file stays in RAM as buffer)
+const storage = multer.memoryStorage();
 
 const upload = multer({
     storage,
-    limits: { fileSize: 10 * 1024 * 1024 } // 10MB limit
+    limits: { fileSize: 20 * 1024 * 1024 } // 20MB limit
 });
 
-module.exports = { connectDB, upload };
+module.exports = { 
+    connectDB, 
+    upload, 
+    initGridFS, 
+    getGridFSBucket 
+};
